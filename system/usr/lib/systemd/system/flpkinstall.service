@@ -1,0 +1,13 @@
+[Unit]
+Description=Manage system flatpaks
+After=bazzite-flatpak-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/flpkinstall
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
